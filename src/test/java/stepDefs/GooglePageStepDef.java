@@ -3,11 +3,15 @@ package stepDefs;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -55,7 +59,19 @@ public class GooglePageStepDef {
 	public void should_display_selenium_result_page() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		Assert.assertEquals(driver.getTitle(), "Selenium Tutorial - Google Search");
+		Assert.assertEquals(driver.getTitle(), "Selenium Tutorial1 - Google Search");
 	}
+	
+	@After
+	public void attachScreenShot(Scenario scenario)
+	{
+		if(scenario.isFailed())
+		{
+			TakesScreenshot screen = (TakesScreenshot)driver;
+			byte[] img = screen.getScreenshotAs(OutputType.BYTES);
+			scenario.attach(img, "image/png", "ScreenshotImage");
+		}
+	}
+	
 
 }
