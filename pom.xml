@@ -10,7 +10,7 @@
     	<artifactId>selenium-java</artifactId>
     	<version>4.14.0</version>
 	</dependency>
-	<!--  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 -->
+	<!--  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 -->
 	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 	<dependency>
     	<groupId>commons-io</groupId>
@@ -34,6 +34,12 @@
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-core</artifactId>
+    <version>7.14.0</version>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
     <version>7.14.0</version>
 </dependency>
 	
