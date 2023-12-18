@@ -23,8 +23,9 @@ Feature: User Login Feature
  
 Scenario: Valid Login
 Given User is on Login Page
-When User enters "tomsmith" and "SuperSecretPassword!"
-
+When User enters credentials
+| username | password |
+|tomsmith | SuperSecretPassword!|
 Then should display success Msg
 
 
